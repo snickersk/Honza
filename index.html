@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='cs'>
+  <head>
+    <link href="mystyle.css" rel="stylesheet">
+    <title>Maturitní četba</title>
+    <meta charset='utf-8'>
+    <meta name='description' content='Školní úkol'>
+    <meta name='keywords' content='HTML,CSS'>
+    <meta name='author' content='Jan Kyselo'>
+    <meta name='robots' content='all'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <form action="pridavani.php" method="post">
+        <div><h4>Přidání knížky:</h4>
+            <label for="jmeno">Jméno:</label><br>
+            <input type="text" id="jmeno" name="jmeno" required><br>
+            <label for="autor">Autor:</label><br>
+            <input type="text" id="autor" name="autor" required><br>
+            <label for="cena">Cena:</label><br>
+            <input type="text" id="cena" name="cena" required><br>
+            <label for="isbn">ISBN:</label><br>
+            <input type="text" id="isbn" name="isbn" required><br>
+            <label for="stranky">Počet stran:</label><br>
+            <input type="text" id="stranky" name="stranky" required><br>
+            <input type="submit" name="pridat">
+        </div>
+    </form>
+    <form action="vypsani.php" method="post">
+        <div>
+            <h4>Vypsání knížky:</h4>
+            <label for="serazeni">Seřadit cenu podle:</label><br>
+              <input type="number" name="serazeni"><br>
+            <label for="mensinez">Menší než uvedená částka</label>
+              <input type="radio" name="porovnani" id="mensi" value="1" required><br>
+
+            <label for="vetsinez">Větší než uvedená částka</label>
+              <input type="radio" name="porovnani" id="vetsi" value="2" required><br>
+            <input type="submit" name="vyhledat">
+
+        </div>
+    </form>
+  </body>
+</html>
