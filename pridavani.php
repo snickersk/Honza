@@ -1,4 +1,4 @@
-<?
+<?php
 $servername = "localhost";
 $username = "Honza";
 $password = "1234";
@@ -7,21 +7,20 @@ $pripojeni = mysqli_connect($servername, $username, $password, $dbname);
     if (!$pripojeni) {
         die("Nepodařilo se připojit k databázi: " . mysqli_connect_error());
     }
-
-    $jmeno = $_POST["jmeno"];
+    $knizka = $_POST["jmeno"];
     $autor = $_POST["autor"];
-    $cena = $_POST["cena"];
+    $cena =$_POST["cena"];
     $isbn = $_POST["isbn"];
-    $stranky = $_POST["isbn"];
+    $stranky = $_POST["stranky"];
 
-    isset($_POST["pridani"]) {
-        $sql = "INSERT INTO knihy (Jméno, Autor, Cena, ISBN, Počet_stran)
-                value ("$jmeno", "$autor", "$cena", "$isbn", "$stranky")";
+
+    $sql = "INSERT INTO knihy (Jméno, Autor, Cena, ISBN, Počet_stran) VALUES($knizka, $autor, $cena, $isbn, $stranky)";
+
+
+    if (mysqli_query($pripojeni, $sql) === TRUE) {
+        echo "Vložení provedeno";
+    } else {
+        echo "Vložení neprovedeno";
     }
-
-if (mysqli_query($pripojeni, $sql)) {
-        echo "Data úspěšně uloženy do databáze";
-    }
-
 mysqli_close($pripojeni);
 ?>

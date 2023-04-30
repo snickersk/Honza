@@ -1,4 +1,4 @@
-<?php 
+<?php
 $servername = "localhost";
 $username = "Honza";
 $password = "1234";
@@ -10,7 +10,7 @@ $pripojeni = mysqli_connect($servername, $username, $password, $dbname);
     $submit = $_POST["vyhledat"];
     $porovnani = $_POST["porovnani"];
     $serazeni = $_POST["serazeni"];
-    
+
 
 switch($porovnani) {
     case 1:
@@ -25,7 +25,7 @@ $vysledek = mysqli_query($pripojeni, $sql);
     if (!$vysledek) {
         die("Chyba při vykonávání dotazu: " . mysqli_connect_error($pripojeni));
     }
-    
+
     while ($row = mysqli_fetch_assoc($vysledek)) {
         echo $row["Cena"] . " Kč<br>";
     }

@@ -15,15 +15,20 @@
         <div><h4>Přidání knížky:</h4>
             <label for="jmeno">Jméno:</label><br>
             <input type="text" id="jmeno" name="jmeno" required><br>
+
             <label for="autor">Autor:</label><br>
             <input type="text" id="autor" name="autor" required><br>
+
             <label for="cena">Cena:</label><br>
-            <input type="text" id="cena" name="cena" required><br>
+            <input type="number" id="cena" name="cena" required><br>
+
             <label for="isbn">ISBN:</label><br>
-            <input type="text" id="isbn" name="isbn" required><br>
+            <input type="number" id="isbn" name="isbn" required><br>
+
             <label for="stranky">Počet stran:</label><br>
-            <input type="text" id="stranky" name="stranky" required><br>
-            <input type="submit" name="pridat">
+            <input type="number" id="stranky" name="stranky" required><br>
+
+            <input type="submit" name="pridavani">
         </div>
     </form>
     <form action="vypsani.php" method="post">
