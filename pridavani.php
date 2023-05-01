@@ -14,7 +14,7 @@ $pripojeni = mysqli_connect($servername, $username, $password, $dbname);
     $stranky = $_POST["stranky"];
 
 
-    $sql = "INSERT INTO knihy (Jméno, Autor, Cena, ISBN, Počet_stran) VALUES($knizka, $autor, $cena, $isbn, $stranky)";
+    $sql = "INSERT INTO knihy (Jméno, Autor, Cena, ISBN, Počet_stran) VALUES ('$knizka','$autor','$cena','$isbn','$stranky')";
 
 
     if (mysqli_query($pripojeni, $sql) === TRUE) {
