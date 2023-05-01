@@ -11,39 +11,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <form action="pridavani.php" method="post">
-        <div><h4>Přidání knížky:</h4>
-            <label for="jmeno">Jméno:</label><br>
-            <input type="text" id="jmeno" name="jmeno" required><br>
+    <header>
+      <div style="margin-inline: 6rem;">
+        <h1>Samostatná práce na programování</h1>
+      </div>
+    </header>
+<main>
+  <div class="form">
+      <form action="pridavani.php" method="post">
+          <div><h4>Přidání knížky:</h4>
+              <label for="jmeno">Jméno:</label><br>
+              <input type="text" id="jmeno" name="jmeno" required><br>
 
-            <label for="autor">Autor:</label><br>
-            <input type="text" id="autor" name="autor" required><br>
+              <label for="autor">Autor:</label><br>
+              <input type="text" id="autor" name="autor" required><br>
 
-            <label for="cena">Cena:</label><br>
-            <input type="number" id="cena" name="cena" required><br>
+              <label for="cena">Cena:</label><br>
+              <input type="number" id="cena" name="cena" required><br>
 
-            <label for="isbn">ISBN:</label><br>
-            <input type="number" id="isbn" name="isbn" required><br>
+              <label for="isbn">ISBN:</label><br>
+              <input type="number" id="isbn" name="isbn" required><br>
 
-            <label for="stranky">Počet stran:</label><br>
-            <input type="number" id="stranky" name="stranky" required><br>
+              <label for="stranky">Počet stran:</label><br>
+              <input type="number" id="stranky" name="stranky" required><br>
 
-            <input type="submit" name="pridavani">
-        </div>
-    </form>
-    <form action="vypsani.php" method="post">
+              <input type="submit" name="pridavani" class="submit">
+          </div>
+      </form>
+  </div>
+  <div class="form">
+      <form action="vypsani.php" method="post">
         <div>
             <h4>Vypsání knížky:</h4>
-            <label for="serazeni">Seřadit cenu podle:</label><br>
+              <label for="serazeni">Seřadit cenu podle:</label><br>
               <input type="number" name="serazeni"><br>
             <label for="mensinez">Menší než uvedená částka</label>
               <input type="radio" name="porovnani" id="mensi" value="1" required><br>
 
             <label for="vetsinez">Větší než uvedená částka</label>
               <input type="radio" name="porovnani" id="vetsi" value="2" required><br>
-            <input type="submit" name="vyhledat">
-
+            <input type="submit" name="vyhledat" class="submit">
         </div>
     </form>
+  </div>
+  <div class="form">
+    <h4>Vypsání tabulky</h4>
+      <form action="cela_databaze.php" method="post">
+        <label for="seradit_tbl">Vypsat tabulku a seřadit jí podle:</label>
+        <select id="seradit_tbl" name="seradit_tbl">
+          <option value="pcena">ceny</option>
+          <option value="pautor">autora</option>
+          <option value="pjmena">jména knížky</option>
+          <option value="pisbn">ISBN</option>
+          <option value="pstran">počtu stran</option>
+        </select><br>
+        <input type="submit" class="submit">
+      </form>
+  </div>
+</main>
   </body>
 </html>
