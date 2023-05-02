@@ -2,12 +2,16 @@ body {
     background-color: beige;
     font-family: Arial, Helvetica, sans-serif;
 }
-    main {
+main {
     display: grid;
     place-content: center;
     box-sizing: border-box;
-    border-width: 50px ;
+    width: 50%;
+    margin-left: 25%;
+    border-style: none;
     background-color: rgba(154, 122, 5, 0.303);
+    border-radius: 10px;
+
 }
 h1 {
     display: flex;
@@ -41,7 +45,9 @@ h4 {
     text-decoration: underline;
     text-underline-offset: 5px;
 }
-input[type=radio] {
-    background-color: #2B3044;
+select {
+    background-color: #00000047;
+    border-radius: 10px;
+    margin-bottom: 1%;
+    border-style: none;
 }
-
