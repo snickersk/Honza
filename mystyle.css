@@ -1,0 +1,47 @@
+body {
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    main {
+    display: grid;
+    place-content: center;
+    box-sizing: border-box;
+    border-width: 50px ;
+    background-color: rgba(154, 122, 5, 0.303);
+}
+h1 {
+    display: flex;
+    justify-content: center;
+}
+h1:hover {
+    color: orange;
+    text-shadow: 4px 6px 7px rgb(149, 97, 45);
+}
+div.form {
+    margin-bottom: 3rem;
+}
+input.submit {
+    margin-top: 1rem;
+}
+input[type=text], input[type=number] {
+    background-color: #00000047;
+    border-style: none;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+input[type=submit] {
+    background-color: #2B3044;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-style: none;
+}
+h4 {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+input[type=radio] {
+    background-color: #2B3044;
+}
+
