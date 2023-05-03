@@ -14,10 +14,10 @@ $pripojeni = mysqli_connect($servername, $username, $password, $dbname);
 
 switch($porovnani) {
     case 1:
-        $sql = "SELECT Cena FROM knihy WHERE Cena <= $serazeni";
+        $sql = "SELECT Jméno, Cena FROM knihy WHERE Cena <= $serazeni";
         break;
     case 2:
-        $sql = "SELECT Cena FROM knihy WHERE Cena >= $serazeni";
+        $sql = "SELECT Jméno, Cena FROM knihy WHERE Cena >= $serazeni";
 }
 
 $vysledek = mysqli_query($pripojeni, $sql);
@@ -25,9 +25,25 @@ $vysledek = mysqli_query($pripojeni, $sql);
     if (!$vysledek) {
         die("Chyba při vykonávání dotazu: " . mysqli_connect_error($pripojeni));
     }
-
-    while ($row = mysqli_fetch_assoc($vysledek)) {
-        echo $row["Cena"] . " Kč<br>";
+echo "<table>";
+?>
+<html>
+    <tr>
+        <th>Název knížky</th>
+        <th>Cena</th>
+    </tr>
+</html>
+<?php
+    while ($radek = mysqli_fetch_assoc($vysledek)) {
+        echo "<tr>";
+        foreach ($radek as $value) {
+            echo "<td>" . $value . "</td>";
+        }
+        echo "</tr>";
     }
+    echo "</table>";
 mysqli_close($pripojeni);
 ?>
+<head>
+    <link href="databaze.css" rel="stylesheet">
+</head>

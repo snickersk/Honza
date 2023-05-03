@@ -17,10 +17,16 @@ h1 {
     display: flex;
     justify-content: center;
 }
-h1:hover {
-    color: orange;
-    text-shadow: 4px 6px 7px rgb(149, 97, 45);
+.barvy {
+    color: black;
+    animation: zmena-barvy 3s infinite;
 }
+@keyframes zmena-barvy {
+    0% {color: black;}
+    50% {color: orange;}
+    100% {color: black;}
+}
+
 div.form {
     margin-bottom: 3rem;
 }
